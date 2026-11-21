@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Network proxy",
+    "description": "Choose how DSH reaches the network: no proxy, or the Windows system proxy. Switch in the sidebar's Network proxy page; it applies immediately with no restart."
+  }
+}

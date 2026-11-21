@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <title>Two routes: through a proxy gate, or straight through</title>
+  <path d="M9 15.5h5.4M21.6 15.5H27" stroke="#3f6f9e" stroke-width="2" stroke-linecap="round"/>
+  <path d="M8.6 25.1c3.6-4.3 6.9-6.1 9.4-6.1s5.8 1.8 9.4 6.1" stroke="#8fa3b6" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="2.6 2.8"/>
+  <circle cx="6.6" cy="15.5" r="2.5" fill="#3f6f9e"/>
+  <circle cx="29.4" cy="15.5" r="2.5" fill="#3f6f9e"/>
+  <rect x="14" y="9" width="8" height="13" rx="2.4" stroke="#3f6f9e" stroke-width="2"/>
+  <path d="M18 6.4V3.9M15.6 6.1 18 3.7l2.4 2.4" stroke="#3f6f9e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
