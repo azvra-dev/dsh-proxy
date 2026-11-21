@@ -1,5 +1,5 @@
 {
-  "name": "@azvra-dev/dsh-proxy",
+  "name": "@azvra/dsh-proxy",
   "version": "1.0.0",
   "type": "module",
   "description": "Choose how DSH reaches the network: no proxy, or the Windows system proxy. Adds a sidebar page with the switch and latency checks.",

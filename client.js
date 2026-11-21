@@ -17,7 +17,7 @@
 // the host's theme tokens, so an upstream rename or removal degrades
 // appearance rather than blanking the slot entry.
 window.__ModuleLoader__.load({
-  id: '@azvra-dev/dsh-proxy',
+  id: '@azvra/dsh-proxy',
   factory(require) {
     const NS = 'dsh-proxy'
     const PANEL_ID = 'dsh-proxy'

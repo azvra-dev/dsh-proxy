@@ -63,7 +63,7 @@ if (anchor !== undefined && anchor !== '') {
 
 // The manifest must declare what the bundle and its client need.
 const manifest = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'))
-assert.equal(manifest.name, '@azvra-dev/dsh-proxy')
+assert.equal(manifest.name, '@azvra/dsh-proxy')
 assert.equal(manifest.publishConfig?.access, 'public', 'a scoped package must publish public')
 assert.notEqual(manifest.private, true, 'npm refuses to publish a private package')
 assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml')

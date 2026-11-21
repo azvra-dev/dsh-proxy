@@ -9,10 +9,10 @@
 插件页填：
 
 ```
-https://github.com/azvra-dev/dsh-proxy
+@azvra/dsh-proxy
 ```
 
-需要机器上有 git，且 DSH 是在装 git 之后启动的。
+也可以从 GitHub 安装 `https://github.com/azvra-dev/dsh-proxy`（需机器上有 git）。
 
 ## 限制
 

@@ -6,4 +6,4 @@
 # /dsh-proxy route logs; `name` must be the full package name.
 - insert:
     - id: dsh-proxy
-      name: '@azvra-dev/dsh-proxy'
+      name: '@azvra/dsh-proxy'
