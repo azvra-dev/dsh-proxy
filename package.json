@@ -1,9 +1,31 @@
 {
-  "name": "dsh-proxy",
+  "name": "@azvra-dev/dsh-proxy",
   "version": "1.0.0",
-  "private": true,
   "type": "module",
   "description": "Choose how DSH reaches the network: no proxy, or the Windows system proxy. Adds a sidebar page with the switch and latency checks.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "proxy",
+    "system-proxy"
+  ],
+  "license": "MIT",
+  "author": "azvra-dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azvra-dev/dsh-proxy.git"
+  },
+  "homepage": "https://github.com/azvra-dev/dsh-proxy#readme",
+  "bugs": {
+    "url": "https://github.com/azvra-dev/dsh-proxy/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
@@ -20,13 +42,6 @@
     "icon.svg",
     "test"
   ],
-  "keywords": [
-    "deepseek-harness",
-    "dsh",
-    "dsh-plugin",
-    "proxy"
-  ],
-  "license": "MIT",
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

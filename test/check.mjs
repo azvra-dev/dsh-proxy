@@ -63,7 +63,9 @@ if (anchor !== undefined && anchor !== '') {
 
 // The manifest must declare what the bundle and its client need.
 const manifest = JSON.parse(readFileSync(join(here, '..', 'package.json'), 'utf8'))
-assert.equal(manifest.name, 'dsh-proxy')
+assert.equal(manifest.name, '@azvra-dev/dsh-proxy')
+assert.equal(manifest.publishConfig?.access, 'public', 'a scoped package must publish public')
+assert.notEqual(manifest.private, true, 'npm refuses to publish a private package')
 assert.equal(manifest.dsh.bundle.patch, './cordis.patch.yml')
 assert.equal(manifest.dsh.client.platform, 'web')
 for (const dep of manifest.dsh.client.inject) {
@@ -75,10 +77,11 @@ for (const file of ['index.js', 'client.js', 'cordis.patch.yml', 'icon.svg', 'lo
   readFileSync(join(here, '..', file), 'utf8')
 }
 
-// The client half must be a well-formed classic client bundle.
+// The client half must be a well-formed classic client bundle. Its loader id
+// must be the full package name, or the boot graph cannot resolve the row.
 const client = readFileSync(join(here, '..', 'client.js'), 'utf8')
 assert.ok(client.startsWith('// dsh-proxy'), 'client header')
-assert.ok(client.includes("id: 'dsh-proxy'"), 'client registers under its package name')
+assert.ok(client.includes(`id: '${manifest.name}'`), 'client loader id equals the package name')
 assert.ok(client.includes("ctx.slots.inject('main'"), 'client registers the panel page')
 assert.ok(client.includes("ctx.slots.inject('sidebar.panellist'"), 'client registers the sidebar row')
 assert.ok(!client.includes('settings.general.item'), 'client no longer fills a Settings row')
@@ -92,9 +95,10 @@ for (const locale of ['en', 'zh']) {
   assert.ok(typeof dict.meta.description === 'string' && dict.meta.description !== '')
 }
 
-// The patch inserts exactly one row named after the package.
+// The patch inserts exactly one row, and its `name` is the package name the
+// Loader resolves; a bare `dsh-proxy` would no longer resolve once scoped.
 const patch = readFileSync(join(here, '..', 'cordis.patch.yml'), 'utf8')
 assert.ok(/- insert:/.test(patch), 'patch inserts a row')
-assert.ok(/name: 'dsh-proxy'/.test(patch), 'patch names the package')
+assert.ok(patch.includes(`name: '${manifest.name}'`), 'patch names the full package')
 
 console.log('all checks passed')

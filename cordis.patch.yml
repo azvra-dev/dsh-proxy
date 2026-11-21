@@ -1,6 +1,9 @@
 # dsh-proxy bundle layer: mounts one Host row. The row switches DSH's own
 # outbound HTTP policy between a direct connection and the Windows system
-# proxy, and serves the three /dsh-proxy JSON routes its Settings row uses.
+# proxy, and serves the three /dsh-proxy JSON routes its sidebar page uses.
+#
+# The row id stays `dsh-proxy` so it reads the same in the Loader and in
+# /dsh-proxy route logs; `name` must be the full package name.
 - insert:
     - id: dsh-proxy
-      name: 'dsh-proxy'
+      name: '@azvra-dev/dsh-proxy'

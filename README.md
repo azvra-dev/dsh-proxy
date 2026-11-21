@@ -7,6 +7,20 @@
 
 切换后立即生效，无需重启。
 
+## 安装
+
+在 DSH 的 **插件 → 添加插件** 中填：
+
+```
+@azvra-dev/dsh-proxy
+```
+
+发布前也可以直接从 Git 安装：
+
+```
+https://github.com/azvra-dev/dsh-proxy
+```
+
 ## 原理
 
 DSH 启动时只读一次代理环境变量，之后不会再变。本插件在运行时替换全局 dispatcher：
